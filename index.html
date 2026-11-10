@@ -1,0 +1,260 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Soporte Local</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f1f6fc;
+    color: #26364a;
+}
+
+header {
+    background: #10233f;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h2 {
+    margin: 0 0 15px;
+    letter-spacing: 1px;
+}
+
+header span {
+    color: #35c6d9;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 8px;
+    font-size: 14px;
+}
+
+.hero {
+    background: linear-gradient(135deg, #10233f, #1769aa);
+    color: white;
+    padding: 45px 22px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 34px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    line-height: 1.6;
+}
+
+.boton {
+    display: inline-block;
+    background: #35c6d9;
+    color: #10233f;
+    padding: 13px 18px;
+    margin-top: 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+main {
+    padding: 25px 16px;
+    max-width: 750px;
+    margin: auto;
+}
+
+h2 {
+    color: #10233f;
+}
+
+.tarjeta {
+    background: white;
+    padding: 22px;
+    border-radius: 14px;
+    margin-bottom: 22px;
+    box-shadow: 0 4px 14px #10233f12;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 7px;
+    border: 1px solid #cbd6e2;
+    border-radius: 7px;
+    font-size: 15px;
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+button {
+    width: 100%;
+}
+
+.datos {
+    line-height: 1.9;
+    overflow-wrap: anywhere;
+}
+
+.datos a {
+    color: #1769aa;
+}
+
+footer {
+    background: #10233f;
+    color: white;
+    text-align: center;
+    padding: 22px;
+    font-size: 13px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h2> <span>SOPORTE LOCAL</span></h2>
+    <nav>
+        <a href="Proyecto.html">Inicio</a>
+        <a href="Nosotros.html">Quiénes somos</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Tu tecnología en buenas manos</h1>
+    <p>
+        Soluciones informáticas para cuidar tus equipos,
+        mejorar su funcionamiento y resolver problemas técnicos.
+    </p>
+    <a href="#consulta" class="boton">Hacer una consulta</a>
+</section>
+
+<main>
+
+    <section class="tarjeta">
+        <h2>¿Qué necesitás?</h2>
+        <p>
+            Contanos qué problema presenta tu computadora
+            y contactanos para recibir asesoramiento.
+        </p>
+    </section>
+
+    <section class="tarjeta" id="consulta">
+        <h2>Formulario de consulta</h2>
+
+        <form id="formulario">
+
+            <label for="nombre">Nombre:</label>
+            <input id="nombre" type="text"
+                   placeholder="Tu nombre" required>
+
+            <label for="contacto">Tu teléfono o correo:</label>
+            <input id="contacto" type="text"
+                   placeholder="¿Cómo podemos contactarte?"
+                   required>
+
+            <label for="servicio">Servicio solicitado:</label>
+            <select id="servicio" required>
+                <option value="">Elegí un servicio</option>
+                <option>Mantenimiento de computadora</option>
+                <option>Limpieza de equipo</option>
+                <option>Instalación de programas</option>
+                <option>Instalación de sistema operativo</option>
+                <option>Eliminación de virus</option>
+                <option>Diagnóstico de fallas</option>
+                <option>Otro servicio</option>
+            </select>
+
+            <label for="mensaje">Tu consulta:</label>
+            <textarea id="mensaje"
+                      placeholder="Describí el problema..."
+                      required></textarea>
+
+            <button type="submit" class="boton">
+                Enviar por WhatsApp
+            </button>
+
+        </form>
+    </section>
+
+    <section class="tarjeta">
+        <h2>Contacto y ubicación</h2>
+
+        <div class="datos">
+            <p>
+                📱 <strong>WhatsApp:</strong><br>
+                <a href="https://wa.me/543704286801">
+                    +54 3704-286801
+                </a>
+            </p>
+
+            <p>
+                📍 <strong>Dirección:</strong><br>
+                Barrio Eva Perón, Mz. 29, Cs. 7,
+                Formosa, Argentina.
+            </p>
+
+            <p>
+                💻 <strong>Atención:</strong><br>
+                Consultanos para coordinar el servicio.
+            </p>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <p><strong>SOPORTE LOCAL</strong></p>
+    <p>Mantenimiento de sistemas informáticos</p>
+    <p>Tu tecnología en buenas manos.</p>
+</footer>
+
+<script>
+document.getElementById("formulario")
+.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const nombre =
+        document.getElementById("nombre").value;
+    const contacto =
+        document.getElementById("contacto").value;
+    const servicio =
+        document.getElementById("servicio").value;
+    const mensaje =
+        document.getElementById("mensaje").value;
+
+    const texto =
+        "Hola, Soporte Local. Quiero hacer una consulta.%0A%0A" +
+        "Nombre: " + encodeURIComponent(nombre) + "%0A" +
+        "Contacto: " + encodeURIComponent(contacto) + "%0A" +
+        "Servicio: " + encodeURIComponent(servicio) + "%0A" +
+        "Consulta: " + encodeURIComponent(mensaje);
+
+    window.location.href =
+        "https://wa.me/543704286801?text=" + texto;
+});
+</script>
+
+</body>
+</html>
